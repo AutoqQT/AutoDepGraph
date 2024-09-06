@@ -27,6 +27,7 @@ This example will contain the following examples
     import os
     import autodepgraph as adg
     from autodepgraph import  AutoDepGraph_DAG
+    import yaml
 
 
 Creating a custom graph
@@ -137,7 +138,7 @@ The examples below show ways of exploring the graph
 
     test_dir = os.path.join(adg.__path__[0], 'tests', 'test_data')
     fn = os.path.join(test_dir, 'three_qubit_graph.yaml')
-    DAG = nx.readwrite.read_yaml(fn)
+    DAG = yaml.load(fn, Loader=yaml.Loader)
 
 .. jupyter-execute::
 
