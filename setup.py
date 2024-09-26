@@ -8,7 +8,7 @@ def get_version(verbose=1):
     try:
         with open("autodepgraph/version.py", "r") as f:
             ln = f.readline()
-            m = re.search(".* " "(.*)" "", ln)
+            m = re.search('__version__ = "(.+)"', ln)
             version = (m.group(1)).strip("'")
     except Exception as E:
         print(E)
